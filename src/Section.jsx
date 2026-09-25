@@ -2,7 +2,7 @@ import { useState } from "react";
 import Form from "./Form";
 import Data from "./Data";
 
-function Section({title,attributes}){
+function Section({title,attributes,addDataToFinal}){
     const initial = {};
     attributes.forEach(attribute=> {initial[attribute.name] = ""})
 
@@ -30,10 +30,12 @@ function Section({title,attributes}){
     const displayForm = ()=>{
         setSubmitted(false);
     }
+
     const displayData = (e)=>{
         e.preventDefault();
         if(e.target.parentNode.checkValidity()){
             setSubmitted(true);
+            addDataToFinal(title,details);
         }
         else
             e.target.parentNode.reportValidity();
@@ -42,8 +44,8 @@ function Section({title,attributes}){
     if(submitted){
             return (
                 <div className="section">
-                    <h2>{title}</h2>
                     <Data details = {details}
+                    title = {title}
                     displayForm = {displayForm}/>
                 </div>
             )
@@ -53,7 +55,7 @@ function Section({title,attributes}){
         <div className="section">
             <h2>{title}</h2>
             <Form fields = {fields}
-                  displayData = {displayData} />
+                  displayData = {displayData}/>
         </div>
     )
 }

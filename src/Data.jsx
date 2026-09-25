@@ -1,4 +1,4 @@
-function Data({details, displayForm}){
+function Data({title, details, displayForm}){
     const fields = [];
     for(let prop in details){
         fields.push(
@@ -8,6 +8,7 @@ function Data({details, displayForm}){
     return (
         <>
             <button onClick = {displayForm} className="edit">Edit Details</button>
+            <h2>{title}</h2>
             {fields}
         </>
     )
