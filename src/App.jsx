@@ -4,11 +4,11 @@ import Final from "./FinalCV";
 
 function App(){
     const [educationSections, setEducationSections] = useState([{title:"Education",key:crypto.randomUUID()}]);
-    const [finalDetails, setFinalDetails] = useState({});
+    const [finalDetails, setFinalDetails] = useState({personalInfo:[],education:[],experience:[]});
     const [displayFinal, setDisplayFinal] = useState(false);
 
     const addDataToFinal = (section,details)=>{
-        setFinalDetails({...finalDetails, [section]:details});
+        setFinalDetails({...finalDetails, [section]:[...finalDetails[section], details]});
     }
 
     const addEducationSection = ()=>{
@@ -26,6 +26,7 @@ function App(){
     const educationSectionList = educationSections.map(section=>
         <li key={section.key}>
             <Section
+            section = "education"
             title={section.title} 
             attributes={[
                 {name:"Qualification",type:"text"},
@@ -57,6 +58,7 @@ function App(){
     const experienceSectionList = experienceSections.map(section=>
         <li key={section.key}>
             <Section
+            section = "experience"
             title={section.title} 
             attributes={[
                 {name:"Job Title",type:"text"},
@@ -75,22 +77,23 @@ function App(){
             <>
                 <h1>CV Builder</h1>
                 <hr/>
-                <Section title="Personal Information"
+                <Section section="personalInfo" title="Personal Information"
                         attributes={[{name:"Name",type:"text"},{name:"Email", type:"email"},{name:"Phone Number", type:"tel"}]}
                         addDataToFinal = {addDataToFinal}/>
                 <hr/>
                 {educationSectionList}
-                <button onClick={addEducationSection}>Add</button>
+                <button onClick={addEducationSection} className={"add"}>Add</button>
                 <hr/>
                 {experienceSectionList}
-                <button onClick={addExperienceSection}>Add</button>
+                <button onClick={addExperienceSection} className={"add"}>Add</button>
                 <hr/>
-                <button onClick={()=>setDisplayFinal(true)}>Done</button>
+                <button onClick={()=>setDisplayFinal(true)} className="done">Done</button>
             </>
         )
     }
     return (
-        <Final details={finalDetails}/>
+        <Final details={finalDetails}
+        displayData = {()=>setDisplayFinal(false)}/>
     )
 }
 

@@ -1,4 +1,4 @@
-function Final({details}){
+function Final({details,displayData}){
     const {personalInfo, education, experience}  = details;
     const educationList = education.map((qualification,index)=>{
         return(
@@ -31,17 +31,15 @@ function Final({details}){
             <p>{personalInfo[0].Email}</p>
             <p>{personalInfo[0]["Phone Number"]}</p>
         </div>
-        <hr/>
         <div className="education section">
             <h2>Educational Qualifications</h2>
             {educationList}
         </div>
-        <hr/>
         <div className="experience section">
-            <h2>Experience Qualifications</h2>
+            <h2>Experience</h2>
             {experienceList}
-        <hr/>
         </div>
+        <button onClick={displayData}>Go Back</button>
         {console.log(details)}
         </>
     )

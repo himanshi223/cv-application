@@ -3,16 +3,20 @@ body {
 }
 
 #root {
+  --main-color: rgb(92, 3, 92);
+  --accent-color: rgb(205, 142, 205);
+
   width: 1126px;
   max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
   min-height: 100svh;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-
 h1 {
+  text-align:center;
   font-size: 56px;
   letter-spacing: -1.68px;
   @media (max-width: 1024px) {
@@ -20,38 +24,116 @@ h1 {
   }
   margin: 8px 0;
 }
+
 h2 {
+  margin: 0 8;
+  border-bottom: 2px solid black;
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
-  margin: 0 0 8px;
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+h3{
+  margin:0;
+}
+
 p {
   margin: 0;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+form>div {
+  display: flex;
+  width: 400px;
+  gap: 8px;
+}
+
+label {
+  width: 100px;
+  text-align: right;
+}
+
+input, textarea {
+  width: 200px;
+  height: 1rem;
+  border: 1px solid var(--accent-color);
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+textarea{
+  resize: none;
+  scroll-behavior: auto;
+}
+
+button {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.add{
+  align-self: flex-end;
+  margin-right: 16px;
+}
+
+hr{
+  width: 90%;
+}
+
+.done{
+  margin: 16px;
+  align-self: center;
+  padding: 4px 32px;
+}
+
+.contact{
+  padding: 0 16px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
+  padding: 8px;
   align-items: center;
-  margin-top: 24px;
 }
 
-.edit {
-  align-self: flex-end;
-  padding: 2px;
-  font-size: 0.8rem;
-  background-color: rgb(247, 224, 224);
-  border: none;
+.edit{
+  align-self: flex-end
 }
 
-.edit:hover {
-  transform: scale(1.1);
+button:hover {
+  transform: scale(1.01);
 }
 
 .contact>*{
   font-size: 0.8rem;
+  text-align: center;
 }
+
+li{
+  list-style: none;
+  text-align:left;
+  width: 100%;
+}
+
+.about{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
