@@ -100,8 +100,14 @@ button {
   margin: 16px auto;
 }
 
-.add{
-  align-self: center;
+li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px;
+}
+
+.add, .remove{
   margin: 0 16px;
   background-color: rgb(211, 163, 211);
   color: black;
@@ -131,7 +137,8 @@ hr{
 }
 
 .edit{
-  align-self: flex-end
+  margin-bottom: 0;
+
 }
 
 button:hover {

@@ -35,7 +35,7 @@ function App(){
                 {name:"Till", type:"date"}
             ]}
             addDataToFinal = {addDataToFinal}/>
-            {section.title!=="Education" && <button onClick={()=>removeEducationSection(section.key)}>Remove</button>}
+            {section.title!=="Education" && <button className="remove" onClick={()=>removeEducationSection(section.key)}>Remove</button>}
         </li>
     );
 
@@ -68,7 +68,7 @@ function App(){
                 {name:"Till", type:"date"}
             ]}
             addDataToFinal = {addDataToFinal}/>
-            {section.title!=="Experience" && <button onClick={()=>removeexperienceSection(section.key)}>Remove</button>}
+            {section.title!=="Experience" && <button className= "remove" onClick={()=>removeexperienceSection(section.key)}>Remove</button>}
         </li>
     );
 
@@ -82,10 +82,10 @@ function App(){
                         addDataToFinal = {addDataToFinal}/>
                 <hr/>
                 {educationSectionList}
-                <button onClick={addEducationSection} className={"add"}>Add</button>
+                <button onClick={addEducationSection} className={"add"}>Add Another Qualification</button>
                 <hr/>
                 {experienceSectionList}
-                <button onClick={addExperienceSection} className={"add"}>Add</button>
+                <button onClick={addExperienceSection} className={"add"}>Add Another Title</button>
                 <hr/>
                 <button onClick={()=>setDisplayFinal(true)} className="done">Done</button>
             </>
