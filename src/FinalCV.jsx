@@ -24,6 +24,8 @@ function Final({details,displayData}){
         )
     });
 
+    
+
     return (
         <>
         <h1>{personalInfo[0].Name}</h1>

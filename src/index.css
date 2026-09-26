@@ -1,42 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-size: 28px;
 }
 
 #root {
   --main-color: rgb(92, 3, 92);
   --accent-color: rgb(205, 142, 205);
 
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
   min-height: 100svh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 
 h1 {
   text-align:center;
-  font-size: 56px;
+  font-size: 4rem;
   letter-spacing: -1.68px;
   @media (max-width: 1024px) {
-    font-size: 36px;
+    font-size: 1.5rem;
   }
   margin: 8px 0;
 }
 
 h2 {
+  width: 80%;
+  text-align: center;
   margin: 0 8;
   border-bottom: 2px solid black;
-  font-size: 24px;
+  font-size: 2rem;
   line-height: 118%;
   letter-spacing: -0.24px;
   @media (max-width: 1024px) {
-    font-size: 20px;
+    font-size: 0.8rem;
   }
 }
 h3{
   margin:0;
+  width: 100%;
 }
 
 p {
@@ -47,23 +55,25 @@ form{
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
   align-items: center;
 }
 
 form>div {
   display: flex;
-  width: 400px;
-  gap: 8px;
+  justify-content: center;
+  gap: 16px;
+  width: 50%;
 }
 
 label {
-  width: 100px;
   text-align: right;
+  width: 300px;
 }
 
 input, textarea {
-  width: 200px;
-  height: 1rem;
+  width: 400px;
+  font-size: 1.5rem;
   border: 1px solid var(--accent-color);
 }
 
@@ -74,21 +84,27 @@ input:focus, textarea:focus {
 textarea{
   resize: none;
   scroll-behavior: auto;
-}
+  font-family: inherit;
+  field-sizing: content;
+  }
 
 button {
-  padding: 4px 8px;
-  font-size: 0.8rem;
+  width: 20%;
+  padding:8px 16px;
+  font-size: 1.2rem;
   background-color: var(--main-color);
   color: white;
   border: none;
   border-radius: 5px;
   align-self: center;
+  margin: 16px auto;
 }
 
 .add{
-  align-self: flex-end;
-  margin-right: 16px;
+  align-self: center;
+  margin: 0 16px;
+  background-color: rgb(211, 163, 211);
+  color: black;
 }
 
 hr{
@@ -96,9 +112,10 @@ hr{
 }
 
 .done{
-  margin: 16px;
+  padding: 16px;
   align-self: center;
-  padding: 4px 32px;
+  font-size: 1.5rem;
+  width: 50%;
 }
 
 .contact{
@@ -110,6 +127,7 @@ hr{
   flex-direction: column;
   padding: 8px;
   align-items: center;
+  width: 100%;
 }
 
 .edit{
@@ -121,7 +139,7 @@ button:hover {
 }
 
 .contact>*{
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -134,6 +152,6 @@ li{
 .about{
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 
